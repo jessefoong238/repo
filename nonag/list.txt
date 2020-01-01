@@ -36,7 +36,7 @@ Suppression Patch
 Release		     Date		          Time
 -------------------------------------
 nonag0178s	    30-Jun-2018	    10:10
-nonag0179      31-Oct-2016      08:19
+nonag0179	31-Oct-2016	08:19
 nonag0180	     30-Nov-2016	    17:08
 nonag0181	     28-Dec-2016	    18:22
 nonag0182	     25-Jan-2017	    10:50
