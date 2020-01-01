@@ -1,1 +1,77 @@
 
+Suppression DIFF
+----------------
+
+The diff performs the following:
+
+1) Removes white borders
+2) Removes all nag screens
+3) Removes loading messages
+4) Removes New Machine & Favorites
+
+
+Add the following to the mame.ini file to disable the appropriate patch section:
+
+skip_gameinfo   0      <- To disable suppression of gameinfo, nagscreen & loading/decrypting messages.
+
+skip_gameinfo   1      <- To ensable suppression of gameinfo, nagscreen & loading/decrypting messages.
+
+
+Suppression & Hiscore Patch
+-------------------------------------
+Release		     Date		          Time
+-------------------------------------
+nonag0171	     07-Mar-2016	    23:27
+nonag0172	     03-Apr-2016	    01:07
+nonag0173	     03-May-2016	    00:41
+nonag0174	     25-May-2016	    20:43
+nonag0175	     29-Jun-2016	    20:47
+nonag0176	     28-Jul-2016	    19:48
+nonag0177	     31-Aug-2016	    20:31
+nonag0178	     28-Sep-2016	    20:59
+
+
+Suppression Patch
+-------------------------------------
+Release		     Date		          Time
+-------------------------------------
+nonag0178s	   30-Jun-2018	    10:10
+nonag0179	     31-Oct-2016	    08:19
+nonag0180	     30-Nov-2016	    17:08
+nonag0181	     28-Dec-2016	    18:22
+nonag0182	     25-Jan-2017	    10:50
+nonag0183	     23-Feb-2017	    13:59
+nonag0184	     29-Mar-2017	    14:42
+nonag0185	     26-Apr-2017	    20:19
+nonag0186	     01-Jun-2017	    16:51
+nonag0187	     28-Jun-2017	    16:05
+nonag0188	     27-Jul-2017	    10:13
+nonag0189	     01-Sep-2017	    04:33
+nonag0190	     30-Sep-2017	    05:03
+nonag0191	     27-Oct-2017	    05:07
+nonag0192	     30-Nov-2017	    18:15
+nonag0193	     01-Jan-2018	    04:27
+nonag0194	     02-Feb-2018	    04:07
+nonag0195	     04-Mar-2018	    19:51
+nonag0196	     30-Mar-2018	    08:33
+nonag0197	     28-Apr-2018	    19:41
+nonag0198	     18-Jun-2018	    17:18
+nonag0199	     30-Jun-2018	    10:10
+nonag0200	     26-Jul-2018	    05:02
+nonag0201	     30-Aug-2018	    15:32
+nonag0202	     27-Sep-2018	    05:38
+nonag0203	     03-Nov-2018	    18:58
+nonag0204	     01-Dec-2018	    19:34
+nonag0205	     27-Dec-2018	    14:27
+nonag0206	     31-Jan-2019	    06:41
+nonag0207	     03-Mar-2019	    16:51
+nonag0208	     30-Mar-2019	    04:56
+nonag0209	     27-Apr-2019	    16:46
+nonag0210	     01-Jun-2019	    06:12
+nonag0211	     29-Jun-2019	    20:02
+nonag0212	     06-Aug-2019	    17:15
+nonag0213	     08-Sep-2019	    11:13
+nonag0214	     30-Sep-2019	    13:14
+nonag0215	     03-Nov-2019	    11:33
+nonag0216	     29-Nov-2019	    18:57
+nonag0217	     01-Jan-2020	    10:37
