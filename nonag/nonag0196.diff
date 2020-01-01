@@ -35,4 +35,3 @@ diff -Nru oldsrc/frontend/mame/ui/ui.cpp src/frontend/mame/ui/ui.cpp
  	draw_text_box(container, messagebox_text.c_str(), ui::text_layout::LEFT, 0.5f, 0.5f, messagebox_backcolor);
  	return 0;
  }
- 
