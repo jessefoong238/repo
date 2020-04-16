@@ -13,5 +13,4 @@ All the scripts has been tested and working properly
 # 
 :star2: **Credited to _MKChamp_**
 
-![GitHub Logo](/images/logo.png)
-Format: ![Alt Text](url)
+![Credited](https://github.com/jessefoong238/repo/blob/master/1.png)
