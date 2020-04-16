@@ -6,8 +6,10 @@ Unfortunately, it unable to skip the compatibility/disclaimer warning screen.
 
 The suppression patch (also known as NoNag), will remove the compatibility/disclaimer warning screen and others (.....such as white box) when used with the previously mentioned option.
 
+
 ```
 All the scripts has been tested and working properly
 ```
+
 
 **Credited to _MKChamp_**
