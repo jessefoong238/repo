@@ -1,6 +1,6 @@
 # About NoNag
 
-The official MAME has a "skip_gameinfo" build-in feature, it will skip the game info at the start screen.
+The official MAME has a "skip_gameinfo" build-in option, it will skip the game info at the start screen.
 
 Unfortunately, it unable to skip the compatibility/disclaimer warning screen.
 
