@@ -11,5 +11,5 @@ The suppression patch (also known as NoNag), will remove the compatibility/discl
 
 
 ```
-All the credit to MKChamp
+**Credited to _MKChamp_**
 ```
