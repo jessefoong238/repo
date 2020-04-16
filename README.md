@@ -11,4 +11,4 @@ All the scripts has been tested and working properly
 ```
 
 # 
-:+1: **Credited to _MKChamp_**
+:star2: **Credited to _MKChamp_**
