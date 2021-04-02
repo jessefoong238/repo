@@ -29,13 +29,13 @@ Suppression Patch
 -------------------------------------
 Release		Date		Time
 -------------------------------------
-nonag0172	03-Apr-2016	01:07
-nonag0173	03-May-2016	00:41
-nonag0174	25-May-2016	20:43
-nonag0175	29-Jun-2016	20:47
-nonag0176	28-Jul-2016	19:48
-nonag0177	31-Aug-2016	20:31
-nonag0178	28-Sep-2016	20:59
+nonag0172	03-Apr-2016	01:07	<-- changes white box color
+nonag0173	03-May-2016	00:41	<-- changes white box color
+nonag0174	25-May-2016	20:43	<-- changes white box color
+nonag0175	29-Jun-2016	20:47	<-- changes white box color
+nonag0176	28-Jul-2016	19:48	<-- changes white box color
+nonag0177	31-Aug-2016	20:31	<-- changes white box color
+nonag0178	28-Sep-2016	20:59	<-- changes white box color
 nonag0178s	30-Jun-2018	10:10
 nonag0179	31-Oct-2016	08:19
 nonag0180	30-Nov-2016	17:08
