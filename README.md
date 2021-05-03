@@ -12,7 +12,7 @@ All the scripts has been tested and working properly
 
 ![Credited](https://github.com/jessefoong238/repo/blob/master/credited.png) **Credited to _MKChamp_**
 
-# Changes
+# Notes
 
 ```
 Started from 0.225, added option for "Skip imperfect emulation warnings"
