@@ -10,7 +10,6 @@ The suppression patch (also known as NoNag), will remove the compatibility/discl
 All the scripts has been tested and working properly
 ```
 
-# 
 ![Credited](https://github.com/jessefoong238/repo/blob/master/credited.png) **Credited to _MKChamp_**
 
 # Changes
