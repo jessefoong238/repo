@@ -1,6 +1,6 @@
 
-Suppression DIFF
-----------------
+Suppression DIFF (MAME)
+-----------------------
 
 The diff performs the following:
 
