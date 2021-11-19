@@ -1,0 +1,45 @@
+diff -Nru oldsrc/emu/render.cpp src/emu/render.cpp
+--- oldsrc/emu/render.cpp	2016-07-27 18:58:06.000000000 +1000
++++ src/emu/render.cpp	2016-07-28 23:30:10.636764472 +1000
+@@ -1391,7 +1391,8 @@
+ 		}
+ 
+ 	// if we are not in the running stage, draw an outer box
+-	else
++	// DISABLE WHITE BORDER
++	else if ( !m_manager.machine().options().skip_gameinfo() )
+ 	{
+ 		render_primitive *prim = list.alloc(render_primitive::QUAD);
+ 		set_render_bounds_xy(&prim->bounds, 0.0f, 0.0f, (float)m_width, (float)m_height);
+@@ -1398,5 +1399,5 @@
+-		set_render_color(&prim->color, 1.0f, 1.0f, 1.0f, 1.0f);
++		set_render_color(&prim->color, 1.0f, 0.1f, 0.1f, 0.1f);
+ 		prim->texture.base = nullptr;
+ 		prim->flags = PRIMFLAG_BLENDMODE(BLENDMODE_ALPHA);
+ 		list.append(*prim);
+ 
+diff -Nru oldsrc/frontend/mame/ui/ui.cpp src/frontend/mame/ui/ui.cpp
+--- oldsrc/frontend/mame/ui/ui.cpp	2016-07-27 18:58:06.000000000 +1000
++++ src/frontend/mame/ui/ui.cpp	2016-07-28 23:30:10.636764472 +1000
+@@ -300,6 +300,10 @@
+ 		switch (state)
+ 		{
+ 			case 0:
++				// DISABLE INTERACTIVE WARNING MESSAGES
++ 				if (machine().options().skip_gameinfo())
++ 					break;
++
+ 				if (show_warnings && warnings_string(messagebox_text).length() > 0)
+ 				{
+ 					set_handler(ui_callback_type::MODAL, std::bind(&mame_ui_manager::handler_messagebox_anykey, this, _1));
+@@ -1011,6 +1015,10 @@
+ 
+ UINT32 mame_ui_manager::handler_messagebox(render_container &container)
+ {
++	// DISABLE INITIALIZING, LOADING & DECRYPTING MESSAGES
++	if (machine().options().skip_gameinfo())
++		return 0;
++
+ 	draw_text_box(container, messagebox_text.c_str(), ui::text_layout::LEFT, 0.5f, 0.5f, messagebox_backcolor);
+ 	return 0;
+ }
