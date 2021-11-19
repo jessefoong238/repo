@@ -1,0 +1,45 @@
+diff -Nru oldsrc/emu/render.cpp src/emu/render.cpp
+--- oldsrc/emu/render.cpp	2016-05-25 09:33:34.000000000 +1000
++++ src/emu/render.cpp	2016-06-13 12:42:51.241069311 +1000
+@@ -1377,7 +1377,8 @@
+ 		}
+ 
+ 	// if we are not in the running stage, draw an outer box
+-	else
++	// DISABLE WHITE BORDER
++	else if ( !m_manager.machine().options().skip_gameinfo() )
+ 	{
+ 		render_primitive *prim = list.alloc(render_primitive::QUAD);
+ 		set_render_bounds_xy(&prim->bounds, 0.0f, 0.0f, (float)m_width, (float)m_height);
+@@ -1384,5 +1385,5 @@
+-		set_render_color(&prim->color, 1.0f, 1.0f, 1.0f, 1.0f);
++		set_render_color(&prim->color, 1.0f, 0.1f, 0.1f, 0.1f);
+ 		prim->texture.base = nullptr;
+ 		prim->flags = PRIMFLAG_BLENDMODE(BLENDMODE_ALPHA);
+ 		list.append(*prim);
+ 
+diff -Nru oldsrc/emu/ui/ui.cpp src/emu/ui/ui.cpp
+--- oldsrc/emu/ui/ui.cpp	2016-02-24 08:58:49.000000000 +0100
++++ src/emu/ui/ui.cpp	2016-02-24 09:54:56.000000000 +0100
+@@ -388,6 +388,10 @@
+ 		switch (state)
+ 		{
+ 			case 0:
++				// DISABLE INTERACTIVE WARNING MESSAGES
++ 				if (machine().options().skip_gameinfo())
++ 					break;
++
+ 				if (show_warnings && warnings_string(messagebox_text).length() > 0)
+ 				{
+ 					set_handler(handler_messagebox_anykey, 0);
+@@ -441,6 +445,10 @@
+ 
+ void ui_manager::set_startup_text(const char *text, bool force)
+ {
++	// DISABLE INITIALIZING, LOADING & DECRYPTING MESSAGES
++	if (machine().options().skip_gameinfo())
++		return;
++
+ 	static osd_ticks_t lastupdatetime = 0;
+ 	osd_ticks_t curtime = osd_ticks();
+ 
