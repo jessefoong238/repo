@@ -15,5 +15,6 @@ All the scripts has been tested and working properly
 # Notes
 
 ```
-Started from 0.225, added option for "Skip imperfect emulation warnings"
+# Started from 0.221, the white box has changed to almost invincible
+# Started from 0.225, added option for "Skip imperfect emulation warnings"
 ```
