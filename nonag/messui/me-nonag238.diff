@@ -1,0 +1,50 @@
+diff -Nru oldsrc/frontend/mame/ui/mainmenu.cpp src/frontend/mame/ui/mainmenu.cpp
+--- oldsrc/frontend/mame/ui/mainmenu.cpp	2021-11-24 06:46:36.000000000 +1100
++++ src/frontend/mame/ui/mainmenu.cpp	2022-01-03 20:57:27.483792547 +1100
+@@ -190,6 +190,9 @@
+ 
+ 	item_append(menu_item_type::SEPARATOR);
+ 
++	// DISABLE SELECT NEW MACHINE & FAVORITES
++	if (!machine().options().skip_gameinfo())
++	{
+ 	if (!mame_machine_manager::instance()->favorite().is_favorite(machine()))
+ 		item_append(_("Add To Favorites"), 0, (void *)ADD_FAVORITE);
+ 	else
+@@ -200,6 +203,7 @@
+ 	item_append(string_format(_("About %s"), emulator_info::get_appname()), 0, (void *)ABOUT);
+ 
+ 	item_append(menu_item_type::SEPARATOR);
++	}
+ 
+ //  item_append(_("Quit from Machine"), 0, (void *)QUIT_GAME);
+ 
+@@ -209,6 +213,7 @@
+ 	}
+ 	else
+ 	{
++		if (!machine().options().skip_gameinfo())
+ 		item_append(_("Select New Machine"), 0, (void *)SELECT_GAME);
+ 		item_append(_("Return to Machine"), 0, (void *)DISMISS);
+ 	}
+diff -Nru oldsrc/frontend/mame/ui/ui.cpp src/frontend/mame/ui/ui.cpp
+--- oldsrc/frontend/mame/ui/ui.cpp	2021-11-24 06:46:36.000000000 +1100
++++ src/frontend/mame/ui/ui.cpp	2022-01-03 21:06:41.454444211 +1100
+@@ -213,6 +213,8 @@
+ 			handler_callback_func(
+ 				[this] (render_container &container) -> uint32_t
+ 				{
++					// DISABLE INITIALIZING, LOADING & DECRYPTING MESSAGES
++					if (!machine().options().skip_gameinfo())
+ 					draw_text_box(container, messagebox_text, ui::text_layout::text_justify::LEFT, 0.5f, 0.5f, colors().background_color());
+ 					return 0;
+ 				}));
+@@ -409,6 +411,8 @@
+ 	bool show_warnings = true, show_mandatory_fileman = true;
+ 	bool video_none = strcmp(downcast<osd_options &>(machine().options()).video(), OSDOPTVAL_NONE) == 0;
+ 
++	// FORCE INTERACTIVE WARNING MESSAGES (HARD RESET)
++	first_time = show_gameinfo;
+ 	// disable everything if we are using -str for 300 or fewer seconds, or if we're the empty driver,
+ 	// or if we are debugging, or if there's no mame window to send inputs to
+ 	if (!first_time || (str > 0 && str < 60*5) || &machine().system() == &GAME_NAME(___empty) || (machine().debug_flags & DEBUG_FLAG_ENABLED) != 0 || video_none)
